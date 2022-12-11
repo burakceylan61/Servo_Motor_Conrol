@@ -1,0 +1,70 @@
+#include<Servo.h>
+Servo servo1,servo2,servo3,servo4,servo5;
+
+void setup()
+{
+    Serial.begin(9600);
+	servo1.attach(2);	
+  	servo2.attach(3);
+  	servo3.attach(4);
+  	servo4.attach(5);
+  	servo5.attach(6);
+}
+  
+void loop()
+{
+  
+  servo1.write(0);
+  delay(1000);
+  for(int i = 0;i<136;i++){
+    servo1.write(i); 
+   Serial.print("servo1 is initialized as 0\n");
+    delay(10);
+  }
+  delay(1000);
+  
+  servo2.write(180);
+  delay(1000);
+  for(int i = 20;i<71;i++){
+    servo2.write(i); 
+   Serial.print("servo2 is initialized as 180\n");
+    delay(10);
+  }
+  delay(1000);
+  
+  servo3.write(45);
+  delay(1000);
+  for(int i = 180;i>9;i--){
+    servo3.write(i);
+    Serial.print("servo3 is initialized as 45\n");
+    delay(10);
+  }
+  delay(1000);
+  
+  servo4.write(0);
+  delay(1000);
+  for(int i = 0;i<121;i++){
+    servo4.write(i); 
+    Serial.print("servo4 is initialized as 0\n");
+    delay(10);
+  }
+  delay(1000);
+  
+  servo5.write(45);
+  delay(1000);
+  
+  for(int i = 45;i<136;i++){
+    servo5.write(i); 
+    Serial.print("servo5 is initialized as 45\n");
+    delay(10);
+  }
+  delay(1000);
+  
+  for(int i = 90;i>19;i--){
+    servo5.write(i); 
+  Serial.print("servo5 is initialized as 90\n");
+    delay(10);
+  }
+  delay(1000);
+  
+}
